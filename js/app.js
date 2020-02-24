@@ -74,7 +74,7 @@ var tokyoLocation = {
   },
   getNumOfCookiesPerHour : function (_custNumPerHour, _avgCookiesPerCust) {
     for (var j=0; j<this.dayHours.length; j++) {
-      var floorAvgCookies = Math.floor(this.avgCookiesPerCust);
+      var floorAvgCookies = Math.floor(this.avgCookiesPerCust);//edit: don;t floor the cookies, floor the numOfCookiesRerHour instead
       this.numOfCookiesPerHour.push(this.custNumPerHour[j]*floorAvgCookies);
       this.totalNumOfCookies = this.totalNumOfCookies + this.numOfCookiesPerHour[j];
     }
