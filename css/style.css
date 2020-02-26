@@ -1,0 +1,46 @@
+#table th{
+    padding: 10px;
+    text-align: center;
+}
+footer {
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    width : 99%;
+
+    bottom: 0px ;
+    background-color: black;
+    color : white;
+    border-top: 1px solid gray;
+}
+#table td {
+    border: 1px solid black;
+    padding: 2px;
+    text-align: center;
+}
+body p {
+    margin: 30px;
+    font-family: serif;
+    border: 1px double black;
+    padding: 15px;
+}
+
+#form {
+    margin: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+label {
+    padding: 5px 10px;
+}
+input {
+    margin: 5px 0px;
+}
+#addShopSubmit {
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+#table td:first-child {
+    text-align: left;
+}
