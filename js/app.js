@@ -78,6 +78,18 @@ ShopLocations.prototype.render = function(){
   tdElDailyTotoal.textContent = this.totalNumOfCookies;
   trEl.appendChild(tdElDailyTotoal);
 };
+// form :
+var newStandForm = document.getElementById('addStandForm');
+newStandForm.addEventListener('submit' , function(event){
+  event.preventDefault();
+  console.log(event.target);
+  var branchName = event.target.name.value;
+  var min = event.target.minCustomerPerHour.value;
+  var max = event.target.maxCustomerPerHour.value;
+  var avg = event.target.avgCookiesPerCustomer.value;
+  var newBranch = new ShopLocations(branchName , min ,max, avg);
+  newBranch.render();
+});
 // table footer :
 function tableFooter() {
   var tfootEl = document.createElement('tfoot'); ///tfoot element : tfootEl
