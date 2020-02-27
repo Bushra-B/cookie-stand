@@ -37,7 +37,7 @@ ShopLocations.prototype.getNumCookiesPerHour = function () { //to calculate the 
     this.numCookiesPerHour.push(Math.floor(this.numCustomerPerHour[i]*this.avgCookiesPerCustomer));
     this.totalNumOfCookies += this.numCookiesPerHour[i];
   }
-  totalOfTotalsArr.push(this.totalNumOfCookies);
+  //totalOfTotalsArr.push(this.totalNumOfCookies);
 };
 // creating objects :
 new ShopLocations('Seatle', '23', '65', '6.3');
@@ -89,6 +89,7 @@ newStandForm.addEventListener('submit' , function(event){
   var avg = event.target.avgCookiesPerCustomer.value;
   var newBranch = new ShopLocations(branchName , min ,max, avg);
   newBranch.render();
+  tableFooter();
 });
 // table footer :
 function tableFooter() {
