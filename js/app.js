@@ -45,6 +45,25 @@ new ShopLocations('Tokyo', '3', '24', '1.2');
 new ShopLocations('Dubai', '11', '38', '3.7');
 new ShopLocations('Paris', '20', '38', '2.3');
 new ShopLocations('Lima', '2', '16', '4.6');
+// sales list :
+ShopLocations.prototype.renderList = function(){
+  var container = document.getElementById('location');
+  var h2El = document.createElement('h2');
+  container.appendChild(h2El);
+  h2El.textContent = this.name;
+  var ulEl = document.createElement('ul');
+  container.appendChild(ulEl);
+  for (var k = 0; k < dayHours.length; k++) {
+    var liEl = document.createElement('li');
+    liEl.textContent = `${dayHours[k]} : ${this.numCookiesPerHour[k]}`;
+    ulEl.appendChild(liEl);
+  }
+  var totalLiEl = document.createElement('li');
+  totalLiEl.textContent = `total : ${this.totalNumOfCookies}`;
+  ulEl.appendChild(totalLiEl);
+  var brEl = document.createElement('br');
+  container.appendChild(brEl);
+};
 // table header :
 function tableHeader() {
   var theadEl = document.createElement('thead'); ///thead element : theadEl
@@ -89,7 +108,7 @@ newStandForm.addEventListener('submit' , function(event){
   var avg = event.target.avgCookiesPerCustomer.value;
   var newBranch = new ShopLocations(branchName , min ,max, avg);
   newBranch.render();
-  tableFooter();
+  /*tableFooter();*/ //when a new location is added, the number of cookies per hour for this location is not calculated in totals 
 });
 // table footer :
 function tableFooter() {
@@ -120,6 +139,9 @@ function tableFooter() {
   tdEl.textContent = totalOfTotalsArr;
 }
 // rendering :
+for (var j=0; j < locations.length; j++){
+  locations[j].renderList();
+}
 tableHeader();
 for (var i=0; i < locations.length; i++){
   locations[i].render();
