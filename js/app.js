@@ -37,7 +37,7 @@ ShopLocations.prototype.getNumCookiesPerHour = function () { //to calculate the 
     this.numCookiesPerHour.push(Math.floor(this.numCustomerPerHour[i]*this.avgCookiesPerCustomer));
     this.totalNumOfCookies += this.numCookiesPerHour[i];
   }
-  //totalOfTotalsArr.push(this.totalNumOfCookies);
+  totalOfTotalsArr.push(this.totalNumOfCookies); //an array that stores totalNumOfCookies for each location
 };
 // creating objects :
 new ShopLocations('Seatle', '23', '65', '6.3');
@@ -81,7 +81,7 @@ function tableHeader() {
   thEl.textContent = 'Daily Location Total';
   trEl.appendChild(thEl);
 }
-// table body :
+// table body - render :
 ShopLocations.prototype.render = function(){
   var trEl = document.createElement('tr');
   tbodyEl.appendChild(trEl);
@@ -101,14 +101,15 @@ ShopLocations.prototype.render = function(){
 var newStandForm = document.getElementById('addStandForm');
 newStandForm.addEventListener('submit' , function(event){
   event.preventDefault();
-  console.log(event.target);
   var branchName = event.target.name.value;
   var min = event.target.minCustomerPerHour.value;
   var max = event.target.maxCustomerPerHour.value;
   var avg = event.target.avgCookiesPerCustomer.value;
   var newBranch = new ShopLocations(branchName , min ,max, avg);
   newBranch.render();
-  /*tableFooter();*/ //when a new location is added, the number of cookies per hour for this location is not calculated in totals 
+  tableEl.deleteRow(tableEl.rows.length-1);
+  tableFooter();
+  newStandForm.reset();
 });
 // table footer :
 function tableFooter() {
@@ -120,7 +121,7 @@ function tableFooter() {
   thElFooter.textContent = 'Totals';
   trEl.appendChild(thElFooter);
   var cookiesSumPerHour;
-  for (var i = 0; i < dayHours.length; i++) {
+  for (var i = 0; i < dayHours.length; i++) { //to repeat 14 times
     cookiesSumPerHour = 0;
     for (var j=0; j < locations.length; j++) { ///to sum the number of cookies per hour for all locations at each hour
       cookiesSumPerHour += locations[j].numCookiesPerHour[i];
@@ -129,14 +130,15 @@ function tableFooter() {
     tdEl.textContent = cookiesSumPerHour;
     trEl.appendChild(tdEl);
   }
+  // the last cell block in footer - sum of all totals :
   var totalOftotalsSum = 0;
-  for (var k=0; k < totalOfTotalsArr.length; k++) {
-    totalOftotalsSum += totalOfTotalsArr[k];
+  for (var k=0; k < totalOfTotalsArr.length; k++) { //totalOfTotalsArr.length = the number of locations
+    totalOftotalsSum += totalOfTotalsArr[k]; //totalOftotalsSum sums the elements in the totalOfTotalsArr
   }
-  totalOfTotalsArr = totalOftotalsSum;
+  //totalOfTotalsArr = totalOftotalsSum;
   tdEl = document.createElement('td');
   trEl.appendChild(tdEl);
-  tdEl.textContent = totalOfTotalsArr;
+  tdEl.textContent = totalOftotalsSum;
 }
 // rendering :
 for (var j=0; j < locations.length; j++){

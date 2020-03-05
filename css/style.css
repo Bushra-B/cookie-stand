@@ -1,3 +1,4 @@
+html, body{ height:100%; margin:0; }
 body {
     margin: auto;
     width:1500px;
@@ -5,19 +6,59 @@ body {
     min-height: 1500px;
     position: relative;
     margin-bottom: 90px;
-    background-color: rgb(150, 148, 148);
+    background-color: #afa597;}
+main{
+    margin-left: 25px;
 }
 h1 {
     padding: 10px;
     padding-top: 30px;
     font-size: 40px;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 20px;
     margin-left: 100px;
-    color: whitesmoke;
+    color: antiquewhite;
+    font-family: cursive;
+}
+h2 {
+    color: blanchedalmond;
+}
+pre{
+    color: sienna;
+    font-family: cursive;
+}
+.sectionUl{
+    background-color: #afa597;
+}
+.List {
+    background-color: rgba(250, 235, 215, 0.2);
+    margin: 0 auto;
+    margin-top: 100px;
+    width: -webkit-fill-available;
+    
+}
+h2.sectionHeading {
+    text-align: left;
+    padding: 15px;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    color: blanchedalmond;
+}
+.sectionImages {
+    height: 282px;
+    width: 250px;
+    margin: 50px;
+    border-radius: 15px;
+}
+iframe {
+    margin: 50px;
+}
+#mainh2{
+    margin-bottom: 100px;
+    margin-top: 200px;
 }
 header {
-    background-color: rgb(73, 72, 72);
+    background-color: #685744;
     margin-top: 2%;
     width: 100% 100%;
     height: 200px;
@@ -38,6 +79,7 @@ nav {
 }
 ul {
 text-align: center;
+background-color: rgba(250, 235, 215, 0.2);
 }
 li {
     display: inline-block;
@@ -50,20 +92,25 @@ li {
 }
 li a {
     text-decoration: none;
-    color: gray;
+    color: cornsilk;
+}
+li a:hover{
+    color: burlywood;
+}
+#table{
+    margin-bottom: 50px;
+    font-size: x-large;
 }
 #table th{
     padding: 10px;
     text-align: center;
 }
 footer {
+    color: antiquewhite;
+    height: 50px;
+    margin-top: 6000px;
     text-align: center;
-    padding: 5px;
-    position: fixed;
-    width : 99%;
-    bottom: 0px ;
-    color : white;
-    border-top: 1px solid gray;
+    background-color: #685744;
 }
 #table td {
     border: 1px solid black;
@@ -73,27 +120,45 @@ footer {
 body p {
     margin: 30px;
     font-family: serif;
-    border: 1px double black;
     padding: 15px;
 }
 
-#form {
-    margin: 10px;
+form {
+    margin: 0 auto;
+    width: 800px;
     font-family: 'Times New Roman', Times, serif;
-    margin-bottom: 50px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
 }
-
+legend{
+    font-family: fantasy;
+    font-size: 30px;
+}
+#addStandForm li{
+    padding: 15px;
+}
 label {
     padding: 5px 10px;
 }
 input {
-    margin: 5px 0px;
+    margin: 15px 0px;
+    padding: 15px;
+    width: 300px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: beige;
 }
-#addShopSubmit {
-    margin-left: 10px;
-    margin-top: 5px;
+#submitButton{
+    padding: 30px;
+    font-size: xx-large;
+    padding-bottom: 69px;
+    font-family: fantasy;
 }
-
-#table td:first-child {
-    text-align: left;
+#submitButton:hover{
+    cursor: pointer;
+}
+input:focus, 
+textarea:focus {
+  border-color: rgb(180, 31, 31);
 }

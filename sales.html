@@ -9,6 +9,7 @@
     <header>
       <h1>Salmon Cookies</h1>
       <nav>
+        <img src="img/chinook.jpg">
         <ul>
           <li><a href = "index.html">Home</a></li>
           <li><a href = "">Contact</a></li>
@@ -17,7 +18,7 @@
       </nav>
     </header>
     <main>
-      <h2>Sales Table: Number of cookies per day for each location</h2>
+      <h2 id="mainh2">Sales Table: Number of cookies per day for each location</h2>
       <div id='location'>
       </div>
       <div id='table'>
@@ -25,21 +26,35 @@
       <div>
         <form id="addStandForm">
           <fieldset>
-            <legend>Add a new stand :</legend>
-          <label for="name">Stand Location</label>
-          <input type="text" id="name" placeholder="Enter the location of the new stand">
-          <label for="minCustomerPerHour">Minimum number of customers</label>
-          <input type="number" id="minCustomerPerHour" placeholder="Enter the min number of customers per hour">
-          <label for="maxCustomerPerHour">Maximum number of customers</label>
-          <input type="number" id="maxCustomerPerHour" placeholder="Enter the max number of customers per hour">
-          <label for="avgCookiesPerCustomer">Average number of cookies</label>
-          <input type="number" id="avgCookiesPerCustomer" placeholder="Enter the average number of cookies per customer">
-          <input type="submit">
+            <legend>ADD A NEW STAND :</legend>
+            <ul class="List">
+              <li>
+                <label for="name">Stand Location</label>
+                <input required type="text" id="name" placeholder="Enter the location of the new stand">
+              </li>
+              <li>
+                <label required for="minCustomerPerHour">Minimum number of customers</label>
+                <input required type="number" id="minCustomerPerHour" placeholder="Enter the min number of customers per hour">
+              </li>
+              <li>
+                <label required for="maxCustomerPerHour">Maximum number of customers</label>
+                <input required type="number" id="maxCustomerPerHour" placeholder="Enter the max number of customers per hour">
+              </li>
+              <li>
+                <label required for="avgCookiesPerCustomer">Average number of cookies</label>
+                <input required type="number" step="any" id="avgCookiesPerCustomer" placeholder="Enter the average number of cookies per customer">
+              </li>
+              <li>
+                <input id="submitButton" type="submit">
+              </li>
+        </ul>
         </fieldset>
         </form>
       </div>
     </main>
-    <footer></footer>
+    <footer>
+      <p>CopyRights for Pat's Salmon Cookies</p>
+    </footer>
     <script src="js/app.js"></script>
   </body>
 </html>
